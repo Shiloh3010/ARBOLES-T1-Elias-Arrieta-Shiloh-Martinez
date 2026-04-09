@@ -1,35 +1,36 @@
 #ELIAS ARRIETA OLIVERO Y SHILOH MARTINEZ
 # Nodo del árbol
-class Node:
+class Nodo:
     def __init__(self, valor):
-        self.val = valor
+        self.valor = valor
         self.padre = None
 
 
+
 # Nodo de la lista enlazada
-# -------------------------------
 class NodoLista:
     def __init__(self, nodo):
         self.nodo = nodo
         self.siguiente = None
-# Árbol 
-class Arbol:
-    def __init__(self, raiz_valor):
-        raiz = Node(raiz_valor)
 
-        self.cabeza = NodoLista(raiz)  # única lista
+
+class Arbol:
+    def __init__(self, valor_raiz):
+        raiz = Nodo(valor_raiz)
+
+        self.cabeza = NodoLista(raiz)  
         self.raiz = raiz
 
     # Insertar
     def insertar(self):
-        valor = input("Valor del nodo: ")
-        padre_valor = input("Valor del padre: ")
+        valor = input("Ingresa el valor del nodo: ")
+        padre_valor = input("Ingresa el valor del padre: ")
 
         padre = None
         actual = self.cabeza
 
         while actual:
-            if actual.nodo.val == padre_valor:
+            if actual.nodo.valor == padre_valor:
                 padre = actual.nodo
                 break
             actual = actual.siguiente
@@ -38,7 +39,7 @@ class Arbol:
             print("Padre no encontrado")
             return
 
-        nuevo = Node(valor)
+        nuevo = Nodo(valor)
         nuevo.padre = padre
 
         nuevo_lista = NodoLista(nuevo)
@@ -49,7 +50,7 @@ class Arbol:
 
         actual.siguiente = nuevo_lista
 
-  
+
     # Peso
     def peso(self):
         contador = 0
@@ -61,6 +62,7 @@ class Arbol:
 
         return contador
 
+ 
     # Orden
     def orden(self):
         max_hijos = 0
@@ -70,11 +72,11 @@ class Arbol:
             nodo = actual.nodo
             contador = 0
 
-            aux = self.cabeza
-            while aux:
-                if aux.nodo.padre == nodo:
+            cabeza = self.cabeza
+            while cabeza:
+                if cabeza.nodo.padre == nodo:
                     contador += 1
-                aux = aux.siguiente
+                cabeza = cabeza.siguiente
 
             if contador > max_hijos:
                 max_hijos = contador
@@ -83,8 +85,8 @@ class Arbol:
 
         return max_hijos
 
+
     # Altura
-    # ---------------------------
     def altura(self):
         max_altura = 0
         actual = self.cabeza
@@ -104,37 +106,41 @@ class Arbol:
 
         return max_altura
 
-# PROGRAMA PRINCIPAL
-def main():
-    raiz = input("Ingrese la raíz: ")
-    arbol = Arbol(raiz)
 
+
+
+raiz = input("Ingrese el valor de la raíz del arbol: ")
+arbol = Arbol(raiz)
+
+while True:
     while True:
-        print("\n1. Insertar")
-        print("2. Peso")
-        print("3. Orden")
-        print("4. Altura")
-        print("5. Salir")
 
-        op = input("Opción: ")
+        print("\n1. Insertar nodo al arbol")
+        print("2. Calcular el peso del arbol")
+        print("3. Calcular el orden del arbol")
+        print("4. Calcular la altura del arbol")
+        print("5. Salir del programa")
 
-        if op == "1":
-            arbol.insertar()
+        opcion = input("Ingresa una opción: ")
 
-        elif op == "2":
-            print("Peso:", arbol.peso())
+        match opcion:
 
-        elif op == "3":
-            print("Orden:", arbol.orden())
+            case "1":
+                arbol.insertar()
 
-        elif op == "4":
-            print("Altura:", arbol.altura())
+            case "2":
+                print("Peso:", arbol.peso())
 
-        elif op == "5":
-            break
+            case "3":
+                print("Orden:", arbol.orden())
 
-        else:
-            print("Opción inválida")
+            case "4":
+                print("Altura:", arbol.altura())
+
+            case "5":
+                break
+
+            case _:
+                print("Opción invalida")
 
 
-main()
