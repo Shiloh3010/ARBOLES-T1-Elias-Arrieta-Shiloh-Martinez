@@ -1,0 +1,87 @@
+from bigtree import Node, Tree
+#ELIAS ARRIETA OLIVERO Y SHILOH MARTINEZ
+# Raíz
+root = Node("Ingeniería en ciencia de Datos")
+
+# SEMESTRES
+sem1 = Node("Semestre 1", parent=root)
+sem2 = Node("Semestre 2", parent=root)
+sem3 = Node("Semestre 3", parent=root)
+sem4 = Node("Semestre 4", parent=root)
+sem5 = Node("Semestre 5", parent=root)
+sem6 = Node("Semestre 6", parent=root)
+sem7 = Node("Semestre 7", parent=root)
+sem8 = Node("Semestre 8", parent=root)
+
+
+# SEMESTRE 1
+Node("Cálculo de funciones en una variable", parent=sem1)
+Node("Álgebra lineal", parent=sem1)
+Node("Química para ingeniería", parent=sem1)
+Node("Introducción a ciencia de datos", parent=sem1)
+Node("Lengua extranjera I: inglés", parent=sem1)
+Node("Catedra UIS", parent=sem1)
+
+
+# SEMESTRE 2
+Node("Algoritmos y programación", parent=sem2)
+Node("Matemáticas discretas", parent=sem2)
+Node("Mecánica", parent=sem2)
+Node("Cálculo en varias variables", parent=sem2)
+Node("Álgebra lineal en espacios vectoriales", parent=sem2)
+Node("Lengua extranjera II", parent=sem2)
+
+
+# SEMESTRE 3
+estructuras = Node("Estructuras de datos", parent=sem3)
+Node("Sistemas distribuidos", parent=sem3)
+Node("Laboratorio de mecánica", parent=sem3)
+Node("Estadística descriptiva y probabilidad", parent=sem3)
+Node("Lengua extranjera III", parent=sem3)
+
+# Subramas
+Node("Programación orientada a objetos", parent=estructuras)
+Node("Bases de datos", parent=estructuras)
+
+
+# SEMESTRE 4
+Node("Métodos numéricos y optimización", parent=sem4)
+Node("Visualización y representación de datos", parent=sem4)
+Node("Programación orientada a objetos (avanzado)", parent=sem4)
+Node("Aprendizaje de máquina", parent=sem4)
+Node("Estadística inferencial", parent=sem4)
+Node("Lengua extranjera IV", parent=sem4)
+
+
+# SEMESTRE 5
+Node("Gestión de proyectos", parent=sem5)
+Node("Big Data", parent=sem5)
+Node("Bases de datos relacionales", parent=sem5)
+Node("Aprendizaje profundo", parent=sem5)
+Node("Métodos de inferencia bayesiana", parent=sem5)
+
+
+# SEMESTRE 6
+Node("Diseño en ingeniería I", parent=sem6)
+Node("Infraestructura TI para datos", parent=sem6)
+Node("Bases de datos no relacionales", parent=sem6)
+Node("Aprendizaje no supervisado", parent=sem6)
+Node("Fundamentos de simulación", parent=sem6)
+
+
+# SEMESTRE 7
+Node("Electiva disciplinar I", parent=sem7)
+Node("Electiva disciplinar II", parent=sem7)
+Node("Ingeniería de software", parent=sem7)
+Node("Seguridad y gobierno de datos", parent=sem7)
+
+
+# SEMESTRE 8
+Node("Diseño en ingeniería II", parent=sem8)
+Node("Electiva disciplinar III", parent=sem8)
+Node("Inteligencia de negocios", parent=sem8)
+Node("Electiva de formación integral I", parent=sem8)
+Node("Electiva de formación integral II", parent=sem8)
+
+tree = Tree(root)
+tree.show()
