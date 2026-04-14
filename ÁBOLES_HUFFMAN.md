@@ -27,7 +27,7 @@ Es el valor asociado a cada símbolo que indica cuántas veces aparece en el tex
 
 ## Algoritmo de Huffman paso a paso🐾🖱️
 ### Para este componente realizaremos 2 ejercicios para explicarlo mejor:
-## ARRIETA
+## 1. ARRIETA
 Recordemos que en una cadena de caracteres, cada letra equivale a guardar en la memoria 1 byte, que son 8 bits, *"ARRIETA"* contiene 7 caracteres, por lo que en total ocuparía 56 bits de almacenamiento.
 
 ### Paso 1= Realizar una tabla de frecuencias
@@ -129,7 +129,7 @@ Todos los nodos que estén a la izquierda serán equivalentes a **0**, los de la
 |E|001|
 |T|01|
 
-### Ese camino binario para cada caracter, son los bits de el espacio que tomará en el almacenamiento 
+### Ese camino binario para cada caracter, son los bits de el espacio que tomará en el almacenamiento:
 |Letra|Frecuencia|Código|Bits usados|
 |:---:|:---:|:----:|:----:|
 |A|2|10|2×2 = 4|
@@ -137,3 +137,15 @@ Todos los nodos que estén a la izquierda serán equivalentes a **0**, los de la
 |T|1|01|1×2 = 2|
 |I|1|000|1×3 = 3|
 |E|1|001|1×3 = 3|
+
+### Entonces el espacio en memoria solo sería de 16 bits (2 bytes)
+
+### COMPARACIÓN:
+## ARRIETA= 56 bits (7 bytes)
+## HUFFMAN= 16 bits (8 bytes)
+Cabe mencionar que no solo se redujo el tamaño para guardarlo en la memoria, si no que también **no se perdió ni un solo dato**.
+
+## 2. SHILOH
+
+
+
